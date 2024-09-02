@@ -9,10 +9,16 @@ const { app, server } = require('./socket/index')
 require('./models/ConversationModel');
 
 // const app = express()
-app.use(cors({
-    origin : process.env.FRONTEND_URL,
+// app.use(cors({
+//     origin : process.env.FRONTEND_URL,
+//     credentials : true
+// }))
+
+const corsOptions = {
+    origin: process.env.FRONTEND_URL,
+    optionsSuccessStatus: 200, // For legacy browser support
     credentials : true
-}))
+  };
 
 app.use(cors({
     origin: [
@@ -21,6 +27,8 @@ app.use(cors({
       'https://whiztalk-back.onrender.com'
     ],
   }));
+
+ 
 
 app.use(express.json())
 app.use(cookiesParser())
