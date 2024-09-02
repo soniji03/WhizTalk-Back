@@ -17,7 +17,8 @@ app.use(cors({
 app.use(cors({
     origin: [
       'https://localhost:5174',
-      'http://localhost:5173'
+      'http://localhost:5173',
+      'https://whiztalk-back.onrender.com'
     ],
   }));
 
