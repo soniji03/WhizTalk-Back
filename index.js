@@ -17,7 +17,6 @@ require('./models/ConversationModel');
 const corsOptions = {
     origin: process.env.FRONTEND_URL,
     optionsSuccessStatus: 200, // For legacy browser support
-    credentials : true
   };
 
 app.use(cors({
