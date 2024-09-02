@@ -14,18 +14,30 @@ require('./models/ConversationModel');
 //     credentials : true
 // }))
 
-const corsOptions = {
-    origin: process.env.FRONTEND_URL,
-    optionsSuccessStatus: 200, // For legacy browser support
-  };
+// const corsOptions = {
+//     origin: process.env.FRONTEND_URL,
+//     optionsSuccessStatus: 200, // For legacy browser support
+//   };
 
-app.use(cors({
+// app.use(cors({
+//     origin: [
+//       'https://localhost:5174',
+//       'http://localhost:5173',
+//       'https://whiztalk-back.onrender.com'
+//     ],
+//   }));
+
+const corsOptions = {
     origin: [
       'https://localhost:5174',
       'http://localhost:5173',
+      'https://whiztalk.netlify.app', // Add your frontend URL here
       'https://whiztalk-back.onrender.com'
     ],
-  }));
+    optionsSuccessStatus: 200, // For legacy browser support
+  };
+  
+  app.use(cors(corsOptions));
 
  
 
