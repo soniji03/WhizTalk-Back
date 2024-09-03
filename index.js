@@ -25,6 +25,7 @@ require('./models/ConversationModel');
 
 const corsOptions = {
     origin: process.env.FRONTEND_URL,
+    credentials: true,
     optionsSuccessStatus: 200 // For legacy browser support
   };
   app.use(cors({
@@ -32,6 +33,7 @@ const corsOptions = {
       'https://fullstackdevloperwithom.netlify.app',
       'http://localhost:5173'
     ],
+    credentials: true,
   }));
 
  
