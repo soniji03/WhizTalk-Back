@@ -1,43 +1,30 @@
-const io = require('socket.io')
-const express = require('express')
-const cors = require('cors')
-require('dotenv').config()
-const connectDB = require('./config/connectDB')
+const io = require('socket.io');
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+const connectDB = require('./config/connectDB');
 const router = require('./routes/index')
 const cookiesParser = require('cookie-parser')
 const { app, server } = require('./socket/index')
 require('./models/ConversationModel');
 
-// const app = express()
-// app.use(cors({
-//     origin : process.env.FRONTEND_URL,
-//     credentials : true
-// }))
+app.use(cors({
+    origin : process.env.FRONTEND_URL,
+    credentials : true
+}))
+
+
 
 // const corsOptions = {
-//     origin: process.env.FRONTEND_URL,
-//     optionsSuccessStatus: 200, // For legacy browser support
-//   };
-
-// app.use(cors({
 //     origin: [
+//       'https://whiztalk-back.onrender.com',
 //       'https://localhost:5174',
 //       'http://localhost:5173',
-//       'https://whiztalk-back.onrender.com'
 //     ],
-//   }));
-
-const corsOptions = {
-    origin: [
-      'https://localhost:5174',
-      'http://localhost:5173',
-      'https://whiztalk.netlify.app', // Add your frontend URL here
-      'https://whiztalk-back.onrender.com'
-    ],
-    optionsSuccessStatus: 200, // For legacy browser support
-  };
+//     optionsSuccessStatus: 200, // For legacy browser support
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
 
  
 
