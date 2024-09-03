@@ -15,7 +15,7 @@ require('./models/ConversationModel');
 
 
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'https://whiztalk.netlify.app/',
+  origin: process.env.FRONTEND_URL || 'https://whiztalk.netlify.app',
   credentials: true,
   optionsSuccessStatus: 200, 
   allowedHeaders: ['Content-Type', 'Authorization']
