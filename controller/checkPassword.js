@@ -28,8 +28,6 @@ async function checkPassword(request,response){
             secure : true,
             sameSite : 'None',
              maxAge: 24 * 60 * 60 * 1000 ,
-              secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax'
         }
 
         return response.cookie('token',token,cookieOptions).status(200).json({
