@@ -8,23 +8,23 @@ const cookiesParser = require('cookie-parser')
 const { app, server } = require('./socket/index')
 require('./models/ConversationModel');
 
+// app.use(cors({
+//     origin : process.env.FRONTEND_URL,
+//     credentials : true
+// }))
+
+
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,
+  credentials : true,
+  optionsSuccessStatus: 200 // For legacy browser support
+};
 app.use(cors({
-    origin : process.env.FRONTEND_URL,
-    credentials : true
-}))
-
-
-
-// const corsOptions = {
-//     origin: [
-//       'https://whiztalk-back.onrender.com',
-//       'https://localhost:5174',
-//       'http://localhost:5173',
-//     ],
-//     optionsSuccessStatus: 200, // For legacy browser support
-//   };
-  
-//   app.use(cors(corsOptions));
+  origin: [
+    'https://whiztalk-back.onrender.com',
+    'http://localhost:5173'
+  ],
+}));
 
  
 
