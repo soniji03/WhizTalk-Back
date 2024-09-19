@@ -30,7 +30,7 @@ const corsOptions = {
   };
   app.use(cors({
     origin: [
-      'https://whiztalk.netlify.app',
+      'https://whiztalk.netlify.app/',
       'http://localhost:5173'
     ],
     credentials: true,
