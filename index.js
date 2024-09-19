@@ -25,18 +25,17 @@ require('./models/ConversationModel');
 
 const corsOptions = {
     origin: process.env.FRONTEND_URL,
-    credentials: true,
+    // credentials: true,
     optionsSuccessStatus: 200 // For legacy browser support
   };
   app.use(cors({
     origin: [
-      'https://whiztalk.netlify.app/',
+      'https://whiztalk.netlify.app',
       'http://localhost:5173'
     ],
-    credentials: true,
+    // credentials: true,
   }));
 
- 
 
 app.use(express.json())
 app.use(cookiesParser())
