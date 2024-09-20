@@ -8,10 +8,10 @@ const cookiesParser = require('cookie-parser')
 const { app, server } = require('./socket/index')
 require('./models/ConversationModel');
 
-// app.use(cors({
-//     origin : process.env.FRONTEND_URL,
-//     credentials : true
-// }))
+app.use(cors({
+    origin : process.env.FRONTEND_URL,
+    credentials : true
+}))
 
 
 // const corsOptions = {
@@ -21,20 +21,20 @@ require('./models/ConversationModel');
 //   allowedHeaders: ['Content-Type', 'Authorization']
 // };
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-const corsOptions = {
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
-    optionsSuccessStatus: 200 // For legacy browser support
-  };
-  app.use(cors({
-    origin: [
-      'https://whiztalk.netlify.app',
-      'http://localhost:5173'
-    ],
-    credentials: true,
-  }));
+// const corsOptions = {
+//     origin: process.env.FRONTEND_URL,
+//     credentials: true,
+//     optionsSuccessStatus: 200 // For legacy browser support
+//   };
+//   app.use(cors({
+//     origin: [
+//       'https://whiztalk.netlify.app',
+//       'http://localhost:5173'
+//     ],
+//     credentials: true,
+//   }));
 
 
 app.use(express.json())
