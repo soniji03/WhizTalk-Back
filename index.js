@@ -10,7 +10,8 @@ require('./models/ConversationModel');
 
 app.use(cors({
     origin : process.env.FRONTEND_URL,
-    credentials : true
+    credentials : true,
+    optionsSuccessStatus: 200, 
 }))
 
 
@@ -21,7 +22,7 @@ app.use(cors({
 //   allowedHeaders: ['Content-Type', 'Authorization']
 // };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // const corsOptions = {
 //     origin: process.env.FRONTEND_URL,
