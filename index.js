@@ -10,9 +10,9 @@ require('./models/ConversationModel');
 
 app.use(cors({
     origin : process.env.FRONTEND_URL,
-    XMLHttpRequestwithcredentials : true,
+    credentials : true,
     optionsSuccessStatus: 200, 
-}))
+}));
 
 
 // const corsOptions = {
@@ -49,6 +49,8 @@ app.get('/',(request,response)=>{
         message : "SERVER RUNNING AT " + PORT
     })
 })
+
+
 
 
 //api endpoints
