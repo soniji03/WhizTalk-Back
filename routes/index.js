@@ -9,6 +9,8 @@ const searchUser = require('../controller/searchUser')
 const { getConversations } = require('../controller/conversations')
 const { forgotPassword } = require('../controller/forgotPassword')
 const { resetPassword } = require('../controller/resetPassword');
+const { refreshToken } = require('../controller/refreshTokan')
+
 
 const router = express.Router()
 
@@ -32,5 +34,7 @@ router.post("/conversations",getConversations)
 router.post("/forgot-password",forgotPassword)
 //reset password
 router.post("/reset-password",resetPassword)
+//refresh tokan
+router.post("/refresh-token",refreshToken)
 
 module.exports = router
